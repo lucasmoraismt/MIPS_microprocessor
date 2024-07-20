@@ -4,6 +4,7 @@ module tb_shift_left2;
     reg [31:0] a;  // Registrador para a entrada "a"
     wire [31:0] y; // Fio para a saída "y"
 
+    
     shift_left2 uut (
         .a(a),   
         .y(y)    
