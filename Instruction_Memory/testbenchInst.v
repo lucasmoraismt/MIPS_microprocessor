@@ -16,5 +16,9 @@ module Testbench;
         $display("Instruction at Address 8: %b", Instr);
         PC = 12; #10;
         $display("Instruction at Address 12: %b", Instr);
+        PC = 16; #10;
+        $display("Instruction at Address 16: %b", Instr);
+        PC = 20; #10;
+        $display("Instruction at Address 20: %b", Instr);
     end
 endmodule
