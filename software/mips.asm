@@ -1,13 +1,6 @@
-LI $t0, 0
-
-LI $t1, 40
-SW $t1, 0($t0)
-LI $t1, 60
-SW $t1, 4($t0)
-
-LW $s0, 0($t0)  # velocidade = 40
-LW $s1, 4($t0)  # velocidade_permitida = 60
-
-SLT $s2, $s1, $s0   # $s2 = (velocidade_permitida < velocidade)
-
-SW $s2, 12($t0)
+li $t0, 70        // Carrega o valor 70 no registrador $t0
+sw $t0, 0(0)      // Armazena o valor de $t0 (70) na posição de memória 0
+li $t1, 60        // Carrega o valor 60 no registrador $t1
+sw $t1, 0(4)      // Armazena o valor de $t1 (60) na posição de memória 4
+slt $s0, $t0, $t1 // $s0 recebe 1 se $t0 < $t1; caso contrário, 0
+sw $s0, 0(8)      // Armazena o valor de $s0 na posição de memória 8
