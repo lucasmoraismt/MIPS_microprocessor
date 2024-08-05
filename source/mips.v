@@ -165,7 +165,7 @@ module ProgramCounter(
         if (reset)
             data <= 0;
         else
-            data <= pc_in;
+            data <= pc_in; 
     end
   
   	assign pc_out = data;
@@ -310,8 +310,8 @@ module AluDecoder(
 
     always @(*) begin
       	case (alu_op)
-            2'b00: alu_control = 3'b010; // add para lw, sw, addi
-            2'b01: alu_control = 3'b110; // sub para beq
+            2'b00: alu_control = 3'b010; // add
+            2'b01: alu_control = 3'b110; // sub
             2'b10: begin // R-type
                 case (funct) 
                     6'b100000: alu_control = 3'b010; // ADD
@@ -403,7 +403,7 @@ module DataMemory(
 
     always @(posedge clk) begin
       	if (we) begin
-          	$display("ADDRESS: %h, VALUE: %d", address[5:0], write_data);
+            $display("ADDRESS: %h, VALUE: %d", address[5:0], write_data);
         	memory[address[5:0]] <= write_data;
       	end
     end
